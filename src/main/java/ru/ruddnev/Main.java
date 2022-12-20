@@ -5,7 +5,6 @@ import ru.ruddnev.objects.Buffet;
 import ru.ruddnev.objects.Pot;
 import ru.ruddnev.people.Karlson;
 import ru.ruddnev.people.Malysh;
-import ru.ruddnev.objects.Cloud;
 import ru.ruddnev.objects.Newspaper;
 import ru.ruddnev.enums.Look;
 
@@ -23,8 +22,21 @@ public class Main {
 
         malysh.getUpQuick();
         malysh.say(karlson.getName() + ", вот тебе тарелка, клади себе каши, сколько хочешь!");
+
+        // реализация локального класса
+        class Cloud {
+            public final Look look;
+            public Cloud() {
+                look = Look.MOODY;
+            }
+            public Look getLook() {
+                return look;
+            }
+        }
+
+
         Cloud cloud = new Cloud();
-        if (karlson.compareToCloud(karlson.getLook(), cloud)) {
+        if (karlson.compareToCloud(karlson.getLook(), cloud.getLook())) {
             System.out.println(karlson.getName() + " был мрачный, как туча.");
         } else {
             System.out.println(karlson.getName() + " совсем не был похож на тучу.");
