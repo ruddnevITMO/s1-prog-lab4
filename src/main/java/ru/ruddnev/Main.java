@@ -12,7 +12,7 @@ import ru.ruddnev.enums.Look;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, NoNamePresentException { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
+    public static void main(String[] args) throws InterruptedException { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
 
         // Реализация анонимного класса
         Room kitchen = new Room() {
