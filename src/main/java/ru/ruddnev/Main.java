@@ -34,9 +34,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String karlsonName = scanner.nextLine();
 
-        if (karlsonName.isEmpty()) {
-            throw new NoNamePresent();
+        try {
+            if (karlsonName.isEmpty()) {
+                throw new NoNamePresent();
+            }
+        } catch (NoNamePresent theException) {
+            System.out.println(theException.getMessage());
+            System.out.println("Но у карсона должно быть имя, поэтому нам придется назвать его Безымянным");
+            karlsonName = "Безымянный";
         }
+
         Karlson karlson = new Karlson( karlsonName, kitchen);
         Newspaper aif = new Newspaper("Аргументы и факты", "фотографию Белого парохода");
         Malysh malysh = new Malysh("Молодой", kitchen, aif);
