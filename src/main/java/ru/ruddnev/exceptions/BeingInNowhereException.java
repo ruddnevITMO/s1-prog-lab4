@@ -1,7 +1,7 @@
 package ru.ruddnev.exceptions;
 
-public class BeingInNowhere extends RuntimeException {
-    public BeingInNowhere(String name) {
+public class BeingInNowhereException extends RuntimeException {
+    public BeingInNowhereException(String name) {
         super("Пребывая нигде, " + name + " не смог стоять на месте.");
     }
 }

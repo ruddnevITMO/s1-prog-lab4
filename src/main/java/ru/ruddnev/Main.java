@@ -1,6 +1,6 @@
 package ru.ruddnev;
 
-import ru.ruddnev.exceptions.NoNamePresent;
+import ru.ruddnev.exceptions.NoNamePresentException;
 import ru.ruddnev.locations.Room;
 import ru.ruddnev.objects.Buffet;
 import ru.ruddnev.objects.Pot;
@@ -12,7 +12,7 @@ import ru.ruddnev.enums.Look;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, NoNamePresent { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
+    public static void main(String[] args) throws InterruptedException, NoNamePresentException { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
 
         // Реализация анонимного класса
         Room kitchen = new Room() {
@@ -36,9 +36,9 @@ public class Main {
 
         try {
             if (karlsonName.isEmpty()) {
-                throw new NoNamePresent();
+                throw new NoNamePresentException();
             }
-        } catch (NoNamePresent theException) {
+        } catch (NoNamePresentException theException) {
             System.out.println(theException.getMessage());
             System.out.println("Но у карсона должно быть имя, поэтому нам придется назвать его Безымянным");
             karlsonName = "Безымянный";

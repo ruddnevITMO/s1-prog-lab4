@@ -1,7 +1,7 @@
 package ru.ruddnev.exceptions;
 
-public class NoNamePresent extends Exception {
-    public NoNamePresent() {
+public class NoNamePresentException extends Exception {
+    public NoNamePresentException() {
         super("Извините, имя обязательно для выполнения программы!");
     }
 }
