@@ -93,17 +93,19 @@ public abstract class Human {
         this.think(text);
     }
 
+    @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) {
             return true;
         } else if (otherObject != null && this.getClass() == otherObject.getClass()) {
-            Human human = (Human)otherObject;
-            return Objects.equals(this.name, human.name) && Objects.equals(this.getRoom(), human.getRoom());
+            return this.hashCode() == otherObject.hashCode();
         } else {
             return false;
         }
     }
 
+
+    @Override
     public int hashCode() {
         return Objects.hash(this.room, this.name, this.leftHandContains, this.rightHandContains, this.look);
     }
