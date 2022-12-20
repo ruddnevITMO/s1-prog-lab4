@@ -3,7 +3,7 @@ import ru.ruddnev.locations.Room;
 import ru.ruddnev.interfaces.IComparableLook;
 import ru.ruddnev.enums.State;
 
-public class Malysh extends Human implements IComparableLook {
+public final class Malysh extends Human implements IComparableLook {
     public State state = State.SITTING;
 
 

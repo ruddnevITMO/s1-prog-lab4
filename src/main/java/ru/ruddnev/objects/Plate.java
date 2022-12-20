@@ -1,7 +1,20 @@
 package ru.ruddnev.objects;
 
+import ru.ruddnev.enums.State;
+
 public class Plate {
     int amountOfPorridgeLumps;
+
+    // Реализация вложенного класса
+    static class Spoon {
+        public State placement = State.FLOATING;
+
+        public void use() {
+            System.out.println("Ложку использовали");
+        }
+    }
+
+    Spoon floatingSpoon = new Spoon();
 
     public Plate() {
         amountOfPorridgeLumps = 0;

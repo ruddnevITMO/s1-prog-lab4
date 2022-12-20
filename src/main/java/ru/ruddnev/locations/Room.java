@@ -16,6 +16,7 @@ public abstract class Room {
         this.name = newName;
     }
     
+
     public String getName() {
         return this.name;
     }
@@ -30,4 +31,6 @@ public abstract class Room {
     public String toString() {
         return "Комната, которая называется \"" + this.name + "\"";
     }
+
+    public abstract void setMaxSound(int percent, String typeOfSound);
 }

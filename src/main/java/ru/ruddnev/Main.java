@@ -1,6 +1,7 @@
 package ru.ruddnev;
 
-import ru.ruddnev.locations.Kitchen;
+import ru.ruddnev.exceptions.NoNamePresent;
+import ru.ruddnev.locations.Room;
 import ru.ruddnev.objects.Buffet;
 import ru.ruddnev.objects.Pot;
 import ru.ruddnev.people.Karlson;
@@ -8,11 +9,35 @@ import ru.ruddnev.people.Malysh;
 import ru.ruddnev.objects.Newspaper;
 import ru.ruddnev.enums.Look;
 
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) throws InterruptedException { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
-        Kitchen kitchen = new Kitchen();
+    public static void main(String[] args) throws InterruptedException, NoNamePresent { // The only purpose of "throws InterruptedException" is for Thread.sleep() not to result in an error.
+
+        // Реализация анонимного класса
+        Room kitchen = new Room() {
+            int maxSoundOverhearPercent;
+            String maxSoundType;
+
+            @Override
+            public void setMaxSound(int percent, String typeOfSound) {
+                this.maxSoundOverhearPercent = percent;
+                this.maxSoundType = typeOfSound;
+
+                System.out.println("Самый шумный звук на кухне - " + typeOfSound + ", он перекрывает " + percent + "% звуков на кухне!");
+            }
+        };
+
         Buffet buffet = new Buffet();
-        Karlson karlson = new Karlson( "Вентиляторный", kitchen);
+
+        System.out.print("Введите имя для Карлсона: ");
+        Scanner scanner = new Scanner(System.in);
+        String karlsonName = scanner.nextLine();
+
+        if (karlsonName.isEmpty()) {
+            throw new NoNamePresent();
+        }
+        Karlson karlson = new Karlson( karlsonName, kitchen);
         Newspaper aif = new Newspaper("Аргументы и факты", "фотографию Белого парохода");
         Malysh malysh = new Malysh("Молодой", kitchen, aif);
 

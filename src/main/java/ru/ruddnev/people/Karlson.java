@@ -5,7 +5,7 @@ import ru.ruddnev.locations.Room;
 import ru.ruddnev.interfaces.IComparableLook;
 
 
-public class Karlson extends Human implements IComparableLook, IGrabbable {
+public final class Karlson extends Human implements IComparableLook, IGrabbable {
 
     public int bunsInPockets = (int) Math.round(Math.random() * 2) + 3; // between 3 and 5 buns
 
