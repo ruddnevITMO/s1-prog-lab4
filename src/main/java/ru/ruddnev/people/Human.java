@@ -4,6 +4,7 @@ import ru.ruddnev.locations.Room;
 import ru.ruddnev.enums.Look;
 import ru.ruddnev.objects.Pot;
 import ru.ruddnev.objects.Plate;
+import ru.ruddnev.exceptions.BeingInNowhere;
 import java.util.Objects;
 
 public abstract class Human {
@@ -17,6 +18,9 @@ public abstract class Human {
 
     public Human(String name, Room room) {
         setName(name);
+        if (room == null) {
+            throw new BeingInNowhere(name);
+        }
         setRoom(room);
     }
 
