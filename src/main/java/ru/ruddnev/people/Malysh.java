@@ -6,8 +6,19 @@ import ru.ruddnev.enums.State;
 public class Malysh extends Human implements IComparableLook {
     public State state = State.SITTING;
 
+
     public Malysh(String name, Room room) {
         super(name, room);
+    }
+
+    public Malysh(String name, Room room, Object firstClosestThing) {
+        this(name, room);
+        setClosestThing(firstClosestThing);
+    }
+
+
+    public void setClosestThing(Object thing) {
+        closestThing = thing;
     }
 
 
