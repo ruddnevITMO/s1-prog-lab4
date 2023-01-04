@@ -44,7 +44,7 @@ public class Main {
             karlsonName = "Безымянный";
         }
 
-        Karlson karlson = new Karlson( karlsonName, kitchen);
+        Karlson karlson = new Karlson( karlsonName, null);
         Newspaper aif = new Newspaper("Аргументы и факты", "фотографию Белого парохода");
         Malysh malysh = new Malysh("Молодой", kitchen, aif);
 
@@ -69,7 +69,7 @@ public class Main {
 
         Cloud cloud = new Cloud();
         if (karlson.compareToCloud(karlson.getLook(), cloud.getLook())) {
-            System.out.println(karlson.getName() + " был мрачный, как туча.");
+            System.out.println(karlson.getName() + " был мрачный, прям как туча.");
         } else {
             System.out.println(karlson.getName() + " совсем не был похож на тучу.");
         }
