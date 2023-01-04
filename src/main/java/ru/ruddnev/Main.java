@@ -95,7 +95,7 @@ public class Main {
 
         karlson.say("Приступим к булочкам!");
         karlson.eatBuns(2);
-        malysh.deepThink("Может, правильнее всего просто дать Карлсону газету? Пусть сам все прочтет");
+        malysh.deepThink("Может, правильнее всего просто дать Карлсону газету? Пусть он сам все прочтет");
         while (karlson.bunsInPockets > 0) {
             karlson.eatBuns(1);
             Thread.sleep(1000);
