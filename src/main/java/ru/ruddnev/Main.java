@@ -69,7 +69,7 @@ public class Main {
 
         Cloud cloud = new Cloud();
         if (karlson.compareToCloud(karlson.getLook(), cloud.getLook())) {
-            System.out.println(karlson.getName() + " был мрачный, прям как туча.");
+            System.out.println(karlson.getName() + " был мрачный, почти как туча.");
         } else {
             System.out.println(karlson.getName() + " совсем не был похож на тучу.");
         }
