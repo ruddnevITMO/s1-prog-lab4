@@ -93,7 +93,7 @@ public class Main {
         }
         kitchen.setMaxSound(12, "Шум посудомойки");
 
-        karlson.say("Приступим к булочкам!");
+        karlson.say("Ну что ж, приступим к булочкам!");
         karlson.eatBuns(2);
         malysh.deepThink("Может, правильнее всего просто дать Карлсону газету? Пусть он сам все прочтет");
         while (karlson.bunsInPockets > 0) {
