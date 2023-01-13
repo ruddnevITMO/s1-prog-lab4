@@ -44,7 +44,7 @@ public class Main {
             karlsonName = "Безымянный";
         }
 
-        Karlson karlson = new Karlson( karlsonName, null);
+        Karlson karlson = new Karlson( karlsonName, kitchen);
         Newspaper aif = new Newspaper("Аргументы и факты", "фотографию Белого парохода");
         Malysh malysh = new Malysh("Молодой", kitchen, aif);
 
