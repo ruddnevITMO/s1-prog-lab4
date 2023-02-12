@@ -8,7 +8,7 @@ import ru.ruddnev.objects.Plate;
 public interface IGrabbable {
     default void grabPlate(Human grabber, Buffet buffet) {
         if (!buffet.takeAPlate()) {
-            System.out.println("В буфете не было тарелок, и Карлсон не смог поесть каши.");
+            System.out.println("В буфете не было тарелок, и Карлсон не смог поесть каши :(");
             System.exit(0);
         }
         Plate plate = new Plate();
